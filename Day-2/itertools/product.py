@@ -1,4 +1,5 @@
-# Go to the README file to know about the problem
+# Go to the link to know about the problem
+# https://www.hackerrank.com/challenges/itertools-product/problem
 from itertools import product
 
 a = map(int, input().split())
