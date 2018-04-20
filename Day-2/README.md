@@ -1,2 +1,2 @@
-# [problem_link](https://www.hackerrank.com/challenges/itertools-product/problem)
+[problem_link](https://www.hackerrank.com/challenges/itertools-product/problem)
 
