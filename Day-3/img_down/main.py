@@ -18,10 +18,12 @@ def img_downloader(url):
     # make a loop in img_link for find only img src_link
     for link in img_link:
         src_link.append(link.get('src'))
+
     # make loop in src_link for find only link where it's start with https:
     for item in src_link:
         if re.match("https:", item):
-            temp = requests.get(item)
+            question_mark = item.find("?")
+            temp = requests.get(item[:question_mark])
             # every time create a new file and download the imaged
             with open("Day-3/img_down/img"+str(count) + ".jpeg", "wb") as f:
                 f.write(temp.content)
