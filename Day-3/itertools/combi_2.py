@@ -1,4 +1,5 @@
 # Go to the link to know about the problem
+# https://www.hackerrank.com/challenges/iterables-and-iterators/problem
 from itertools import combinations
 
 n = int(input())
