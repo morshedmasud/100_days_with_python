@@ -4,12 +4,14 @@ from itertools import product
 
 k, m = map(int, input().split())
 lis = []
-for _ in range(int(k)):
-    lis.append(list(map(int, input().split()))[1:])
+for _ in range(k):
+    n = (list(map(int, input().split()))[1:])
 
-result = sum(map(lambda x: x**2, lis)) % m
-print(result)
+print(n)
 
-print(lis)
+# result = sum(map(lambda x: x**2, lis)) % m
+# print(result)
 
-print(list(product(*lis)))
+# print(lis)
+
+# print(list(product(*lis)))
