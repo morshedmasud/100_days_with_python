@@ -1,13 +1,10 @@
 import re
-# p = r"[A-Z](.*)"
-p = r""
+p = r"([\d\.-]+)"
 a = []
 with open('file.txt', 'r') as f:
-    a = f.readline(5)
-    print(a)
-    # temp = re.findall(p, a)
-    # print(temp)
-
+    a = f.readline()
+    temp = re.findall(p, a)
+    print(temp)
 
 #     for i in f:
 #         a.append(i.split())
