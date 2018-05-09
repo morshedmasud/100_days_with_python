@@ -1,6 +1,4 @@
 import re
-p = r"([\d\.-]+)"
-a = []
 with open('file.txt', 'r') as f:
     for j in f:
         temp = re.search(r'([\w\.-]+)\B([\D\.-]+)', j)
