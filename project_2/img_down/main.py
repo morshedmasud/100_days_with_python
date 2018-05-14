@@ -1,7 +1,8 @@
-import requests
-from bs4 import BeautifulSoup
+
 import re
 import sys
+import requests
+from bs4 import BeautifulSoup
 
 def img_downloader(url):
     # using request get() for connect the url
