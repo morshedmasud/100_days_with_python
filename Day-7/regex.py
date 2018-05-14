@@ -4,5 +4,5 @@ import re
 # print(result)
 
 s = "Bangladesh, India, South Koria, New Zealand, America,"
-r = re.findall(r'([\w\.-]+)\B([\D\.-]+)', s)
+r = re.findall(r'(\w+\s*\w+)', s)
 print(r)
