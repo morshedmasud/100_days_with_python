@@ -8,7 +8,7 @@ import re
 # r = re.findall(r'(\w+\s*\w+)', s)
 # print(r)
 
-
+print('jkdfksd')
 with open('temp.txt', 'r') as f:
     temp = f.read()
     print(temp)
