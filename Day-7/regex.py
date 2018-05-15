@@ -8,8 +8,23 @@ import re
 # r = re.findall(r'(\w+\s*\w+)', s)
 # print(r)
 
-print('jkdfksd')
-with open('temp.txt', 'r') as f:
-    temp = f.read()
-    print(temp)
+"""Make a list from multiline text file"""
+# with open('file.txt', 'r') as f:
+    # temp = f.read()
+# r = re.findall(r'^.+?$', temp, re.MULTILINE)
+# print(r)
+"""Find only word or name in html list element"""
+# s = '<li>Morshed masud</li><li>Kamrul </li><li>Tanvir</li><li>Tamim</li>'
+# r = re.findall(r'<li>(.*?)</li>', s)
+# print(r)
 
+""" re.compile"""
+# s = "This is line 1: Date is 2017/06/18. and there in another Date : 2020-02-09. The third and final date is 2222/07/25."
+# pat = re.compile(r"(\d{4})[/-](\d{2})[/-](\d{2})")
+# r = pat.findall(s)
+# print(r)
+
+""" Change anything in string with re.sub()"""
+s = "Abcd, 12345 - 22"
+r = re.sub(r'\d', '1', s)
+print(r)
