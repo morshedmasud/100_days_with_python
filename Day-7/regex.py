@@ -25,6 +25,10 @@ import re
 # print(r)
 
 """ Change anything in string with re.sub()"""
-s = "Abcd, 12345 - 22"
-r = re.sub(r'\d', '1', s)
+# s = "Abcd, 12345 - 22"
+# r = re.sub(r'\d', '1', s)
+# print(r)
+
+s = "22/07/2005, 20/01/2002, 01/11/2018"
+r = re.sub(r"(\d{2})/(\d{2})/(\d{4})", r'\3-\2-1', s)
 print(r)
