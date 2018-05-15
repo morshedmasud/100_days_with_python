@@ -29,6 +29,16 @@ import re
 # r = re.sub(r'\d', '1', s)
 # print(r)
 
-s = "22/07/2005, 20/01/2002, 01/11/2018"
-r = re.sub(r"(\d{2})/(\d{2})/(\d{4})", r'\3-\2-1', s)
-print(r)
+# s = "22/07/2005, 20/01/2002, 01/11/2018"
+# r = re.sub(r"(\d{2})/(\d{2})/(\d{4})", r'\3-\2-\1', s)
+# print(r)
+#
+with open("input.html", 'r') as f:
+    temp = f.read()
+#
+k = re.findall(r'<li>\n(.*)\n[\s\t]*<ol>\n[\s\t]*<li>(.*)</li>\n[\s\t]*<li>(.*)</li>\n', temp)
+for i in k:
+    t = ",".join(i)
+    result = re.sub(r'(\w+)[,\s](\w+\s\w+)[,\s](\w+\s\w+)', r'\1 - \2,  \3', t)
+    print(result)
+
