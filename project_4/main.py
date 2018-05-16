@@ -12,12 +12,14 @@ def create_directory(name):
 def down_img(img_url, file_name):
     print("Downloading", img_url)
     response = requests.get(img_url)
-    with open('dimik_pub/file_name', 'wb') as f:
+    with open('file_name', 'wb') as f:
         f.write(response.content)
 
 def get_directory_name(regex, url):
-    result = re.findall(regex, url)
-    dir_name = "".join(result[0])
+    response = requests.get(url)
+    content = response.text
+    result = re.findall(regex, content)
+    dir_name = "_".join(result[0])
     return dir_name
 
 def process():
@@ -36,30 +38,36 @@ def process():
     regexp = re.compile(r'<div class="book-cover">\s*<a href="(.*?)">\s*<img src="(.*?)">.*?<h2 class="sd-title">\s*<.*?>(.*?)<', re.S)
 
     # create dir_regex for dir name
-    dir_regex = re.compile(r'book/(\d+)/(\w+)-(\w+)-(\w+)-(\w+)*-by')
+    dir_regex = re.compile(r'book/(\d+)/(\w+)-(\w+)-(\w+)-(\w+)*-by', re.S)
 
     # Finding full information about all book
     book_info = re.findall(regexp, page_content)
 
     # separate name, img_url and url for book information
     for item in book_info:
-        name = item[3]
+        name = item[2]
+        print("name  ",name)
         img_url = item[1]
+        print("img url  ",img_url)
         url = item[0]
+        print("info  ",url)
 
         # making directory name for create_directory()
         dir_name = main_dir + "/" + get_directory_name(dir_regex, url)
+        print("dir name: ",dir_name)
         create_directory(dir_name)
 
         # making file_name and create info text file to store all information about each book
         file_name = dir_name + "/" + "info.text"
         with open(file_name, 'w') as fp:
             fp.write(name + "\n")
-            fb.write(url)
+            fp.write(url)
 
         # making image file name and using down_img() for download  each book image
         img_file_name = dir_name + "/" + "image.png"
+        print(img_file_name)
         down_img(img_url, img_file_name)
+        break
 
 if __name__ == "__main__":
     process()
