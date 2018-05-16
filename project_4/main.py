@@ -11,9 +11,9 @@ def create_directory(name):
 
 def down_img(img_url, file_name):
     print("Downloading", img_url)
-    response = requests.get(img_url)
-    with open('file_name', 'wb') as f:
-        f.write(response.content)
+    r = requests.get(img_url)
+    with open(file_name, 'wb') as f:
+        f.write(r.content)
 
 def get_directory_name(regex, url):
     response = requests.get(url)
@@ -67,7 +67,7 @@ def process():
         img_file_name = dir_name + "/" + "image.png"
         print(img_file_name)
         down_img(img_url, img_file_name)
-        break
+
 
 if __name__ == "__main__":
     process()

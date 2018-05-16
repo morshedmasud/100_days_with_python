@@ -4,16 +4,22 @@ import re
 import requests
 import sys
 
-url = "http://dimik.pub"
-response = requests.get(url)
-if response.ok is False:
-    sys.exit("Could not get response from server")
-page_content = response.text
+url = "http://dimik.pub/wp-content/uploads/2018/02/programming-er-asorjo-jogot.jpg"
 
-pat = re.compile(r'<div class="book-cover">\s*<a href="(.*?)">\s*<img src="(.*?)">.*?<h2 class="sd-title"><.*?>(.*?)<', re.S)
+r = requests.get(url)
+with open("nfdf.jpg", 'wb') as f:
+    f.write(r.content)
 
-result = re.findall(pat, page_content)
-print(result)
+# url = "http://dimik.pub"
+# response = requests.get(url)
+# if response.ok is False:
+#     sys.exit("Could not get response from server")
+# page_content = response.text
+
+# pat = re.compile(r'<div class="book-cover">\s*<a href="(.*?)">\s*<img src="(.*?)">.*?<h2 class="sd-title"><.*?>(.*?)<', re.S)
+
+# result = re.findall(pat, page_content)
+# print(result)
 # for i in result:
 #     print("Name: ", i[2])
 #     print("URL: ", i[0])
