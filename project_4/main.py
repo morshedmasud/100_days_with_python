@@ -11,14 +11,15 @@ def create_directory(name):
 
 def down_img(img_url, file_name):
     print("Downloading", img_url)
+    print()
     r = requests.get(img_url)
     with open(file_name, 'wb') as f:
         f.write(r.content)
 
-def get_directory_name(regex, url):
-    result = re.findall(regex, url)
-    dir_name = "_".join(result[0])
-    return dir_name
+# def get_directory_name(regex, url):
+#     result = re.findall(regex, url)
+#     dir_name = "_".join(result[0])
+#     return dir_name
 
 
 def process():
@@ -43,7 +44,6 @@ def process():
     book_info = re.findall(regexp, page_content)
 
     # separate name, img_url and url for book information
-    print(len(book_info))
     for item in book_info:
         name = item[2]
         img_url = item[1]
@@ -51,18 +51,18 @@ def process():
 
 
         # making directory name for create_directory()
-        dir_name = main_dir + "/" + get_directory_name(dir_regex, book_url)
+        # dir_name = main_dir + "/" + get_directory_name(dir_regex, book_url)
+        dir_name = main_dir + "/" + name
         create_directory(dir_name)
 
         # making file_name and create info text file to store all information about each book
-        file_name = dir_name + "/" + "info.text"
+        file_name = dir_name + "/" + "info.txt"
         with open(file_name, 'w') as fp:
             fp.write(name + "\n")
             fp.write(book_url)
 
         # making image file name and using down_img() for download  each book image
         img_file_name = dir_name + "/" + "image.jpg"
-        print(img_file_name)
         down_img(img_url, img_file_name)
 
 
