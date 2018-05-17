@@ -11,9 +11,10 @@ def create_directory(name):
     return None
 
 def down_img(img_url, file_name):
-    print("Downloading", img_url)
-    print()
+    print(img_url)
+    print(type(img_url),"\n")
     r = requests.get(img_url)
+    print(r.status_code)
     with open(file_name, 'wb') as f:
         f.write(r.content)
 
