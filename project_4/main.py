@@ -8,6 +8,7 @@ def create_directory(name):
         os.mkdir(name)
     except Exception as e:
         print(e,"\nname already exists")
+    return None
 
 def down_img(img_url, file_name):
     print("Downloading", img_url)
@@ -38,7 +39,7 @@ def process():
     regexp = re.compile(r'<div class="book-cover">\s*<a href="(.*?)">\s*<img src="(.*?)">.*?<h2 class="sd-title">\s*<.*?>(.*?)<', re.S)
 
     # create dir_regex for dir name
-    dir_regex = re.compile(r'book/(\d+)/(\w+)-(\w+)-(\w+)-')
+    # dir_regex = re.compile(r'book/(\d+)/(\w+)-(\w+)-(\w+)-')
 
     # Finding full information about all book
     book_info = re.findall(regexp, page_content)
