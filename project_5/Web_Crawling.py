@@ -30,3 +30,36 @@ def scrape_book_info(book_info, category_name):
 
 def crawl_category(category_name, category_url):
     """crawls a particular catefory of book"""
+    while True:
+        content = get_page_content(category_url)
+        book_list = get_book_list(content)
+
+        for book in book_list:
+            scrape_book_info(book)
+
+        if get_next_page(content) is None:
+            break
+
+def crawl_website():
+    """crawl_website() is the main function that coordinates the whole crawling task"""
+    url = "http://books.toscrape.com/index.html"
+    host_name = "books.toscrape.com"
+
+    content = get_page_content(url)
+    category_list = get_category_list(content)
+
+    for category in category_list:
+        category_name, category_url = category
+        crawl_category(category_name, category_url)
+
+
+if __name__ == "__main__":
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='bookstore_crawler.log',level=logging.DEBUG)
+
+    with open("book_list.csv", "w") as csvf:
+        csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "Image_URL", "Price", "Availability","Description"])
+        csv_writer.writeheader()
+
+
+
+
