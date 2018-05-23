@@ -62,17 +62,3 @@
 # in_alsdaval = avl_pat.findall(page_content)
 
 
-import csv
-
-field_name = ["name", "Authon", "Publisher","Price", "Categorey"]
-book1 = ["Computer Programming Part 1", "Tamim Shahriar Subeen", "Onnorokom Prokashoni", "240.00", "Programming"]
-book2 = ["Computer Programming Part 2", "Tamim Shahriar Subeen", "Onnorokom Prokashoni", "250.00", "Programming"]
-book3 = ["Computer Programming Part 3", "Tamim Shahriar Subeen", "Onnorokom Prokashoni", "200.00", "Programming"]
-Book_list = [book1, book2, book3]
-
-with open("books.csv", 'w') as csvf:
-    csv_writer = csv.writer(csvf, delattr=',', quotechar="\"", quoting=csv.QUOTE_MINIMAL)
-
-    csv_writer = writerow(field_name)
-    for book in Book_list:
-        csv_writer.writerow(book)
