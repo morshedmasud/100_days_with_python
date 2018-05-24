@@ -65,18 +65,18 @@ def crawl_website():
         category_url, category_name = category
         print(category_name)
         sys.exit(1)
-        # crawl_category(category_name, category_url)
+        crawl_category(category_name, category_url)
 
 if __name__ == "__main__":
    # Compile different regular expression patterns
     category_pat = re.compile(r'<li>\s*<a href="(catalogue/category/books/.*?)">\s*(\w+[\s\w]+\w)\s*?', re.M | re.DOTALL)
 
 
-    # logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='bookstore_crawler.log',level=logging.DEBUG)
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='bookstore_crawler.log',level=logging.DEBUG)
 
-    # with open("book_list.csv", "w") as csvf:
-    #     csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "Image_URL", "Price", "Availability","Description"])
-    #     csv_writer.writeheader()
+    with open("book_list.csv", "w") as csvf:
+        csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "Image_URL", "Price", "Availability","Description"])
+        csv_writer.writeheader()
     crawl_website()
 
 
