@@ -2,3 +2,159 @@
 05/24/2018 11:39:07 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
 05/24/2018 11:41:45 pm Starting new HTTP connection (1): books.toscrape.com
 05/24/2018 11:41:45 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:43:17 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:43:17 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:44:06 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:44:07 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:45:19 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:45:20 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:45:20 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:45:20 pm http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/24/2018 11:45:20 pm scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/24/2018 11:45:20 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:45:21 pm http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/24/2018 11:47:17 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:47:17 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:47:17 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:47:18 pm http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/24/2018 11:48:06 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:48:07 pm http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/24/2018 11:48:07 pm Starting new HTTP connection (1): books.toscrape.com
+05/24/2018 11:48:07 pm http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:07:47 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:07:48 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:07:48 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:07:49 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:10:09 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:10:10 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:10:10 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:10:10 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:13:01 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:13:02 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:13:02 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:13:02 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:13:35 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:13:35 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:13:35 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:13:37 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:15:11 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:15:12 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:15:12 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:15:13 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:15:45 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:15:45 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:15:45 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:15:46 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:16:24 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:16:24 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:16:28 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:16:29 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:17:52 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:17:54 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:17:54 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:17:55 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:18:28 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:18:29 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:18:29 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:18:29 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:19:52 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:19:53 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:19:53 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:19:53 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:19:53 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:19:53 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:19:54 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:20:41 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:20:42 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:20:42 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:20:42 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:20:42 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:20:42 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:20:43 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:21:07 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:08 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:21:08 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:09 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:21:09 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:21:09 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:10 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:21:27 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:28 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:21:28 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:29 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:21:29 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:21:29 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:21:29 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:04 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:05 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:22:05 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:05 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:05 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:22:05 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:06 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:20 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:21 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:22:21 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:22 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:22 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:22:22 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:22 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:38 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:39 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:22:40 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:40 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:22:40 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:22:40 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:22:41 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:24:31 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:24:34 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:24:34 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:24:34 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:24:34 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:24:34 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:24:35 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:25:06 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:25:07 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:25:07 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:25:08 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:25:09 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:25:09 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:25:09 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:10 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:11 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:26:11 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:11 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:11 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:26:11 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:12 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:12 am Description not found
+05/25/2018 12:26:32 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:33 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:26:33 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:34 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:34 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:26:34 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:34 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:34 am Description not found
+05/25/2018 12:26:51 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:52 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:26:52 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:52 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:26:52 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:26:52 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:26:53 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:27:08 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:09 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:27:09 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:09 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:27:09 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:27:09 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:10 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None
+05/25/2018 12:27:10 am Description not found
+05/25/2018 12:27:41 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:42 am http://books.toscrape.com:80 "GET /index.html HTTP/1.1" 200 None
+05/25/2018 12:27:42 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:43 am http://books.toscrape.com:80 "GET /catalogue/category/books/travel_2/index.html HTTP/1.1" 200 None
+05/25/2018 12:27:43 am scraping: http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html
+05/25/2018 12:27:43 am Starting new HTTP connection (1): books.toscrape.com
+05/25/2018 12:27:43 am http://books.toscrape.com:80 "GET /catalogue/its-only-the-himalayas_981/index.html HTTP/1.1" 200 None

@@ -85,10 +85,12 @@ def scrape_book_info(book_info, category_name):
 
     book_url, book_name = book_info
     book_dict = {"Name": book_name, "Category": category_name}
+    # sys.exit(1)
 
     book_url = book_url.replace("../../../", "")
     book_url = "http://books.toscrape.com/catalogue/" + book_url
     book_dict['URL'] = book_url
+
 
     print("scareping book ", book_name)
     logging.info("scraping: " + book_url)
@@ -102,8 +104,10 @@ def scrape_book_info(book_info, category_name):
     book_dict["ImageURL"] = image_url
     book_dict["Availability"] = availability
     book_dict["Description"] = description
+    print(book_dict["Description"])
+    sys.exit(1)
 
-    csv_writer.writerows(book_dict)
+    # csv_writer.writerows(book_dict)
 
 
 def crawl_category(category_name, category_url):
@@ -114,7 +118,10 @@ def crawl_category(category_name, category_url):
 
         book_list = get_book_list(content)
         for book in book_list:
+            print('m')
             scrape_book_info(book, category_name)
+
+        sys.exit(1)
 
         next_page = get_next_page(category_url, content)
         if next_page is None:
@@ -135,9 +142,10 @@ def crawl_website():
     category_list = get_category_list(content)
     for category in category_list:
         category_url, category_name = category
-        print(category_url)
+
         category_url = "http://" + host_name + "/" + category_url
-        sys.exit(1)
+        print(category_url)
+        # sys.exit(1)
 
         crawl_category(category_name, category_url)
         sys.exit(1)
