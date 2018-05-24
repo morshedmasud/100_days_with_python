@@ -17,7 +17,46 @@ def get_book_list(content):
 
 def get_product_details(content):
     """get_product_details takes content of a product page, parses the page and return detils about a product"""
-    pass
+    img_base = "http://books.toscrape.com"
+    result = img_pat.findall(content)
+    if len(result) == 0:
+        logging.warn("Image url not found")
+        image_url = ""
+    else:
+        img_url = result[0]
+        img_url = img_url.replace("../../", "")
+        image_url = img_base + img_url
+
+    result = desc_pat.findall(content)
+    if len(result) == 0:
+        logging.warn("Description not found")
+        description = ""
+    else:
+        description = result[0]
+
+    result = upc_pat.findall(content)
+    if len(result) == 0:
+        logging.warn("UPC not found")
+        upc = ""
+    else:
+        upc = result[0]
+
+    result = price_pat.findall(content)
+    if len(result) == 0:
+        logging.warn("Price not found")
+        price = ""
+    else:
+        price = result[0]
+
+    result = avail_pat.findall(content)
+    if len(result) == 0:
+        logging.warn("Available item not found")
+        availability = ""
+    else:
+        availability = result[0]
+
+    return upc, price, image_url, availability, description
+
 
 def get_page_content(url):
     """get_page_content takes a url and returns the content of the page"""
@@ -43,7 +82,29 @@ def get_next_page(url, content):
 
 def scrape_book_info(book_info, category_name):
     """gets the content of a book details page, and parses different components and stores the info"""
-    pass
+
+    book_url, book_name = book_info
+    book_dict = {"Name": book_name, "Category": category_name}
+
+    book_url = book_url.replace("../../../", "")
+    book_url = "http://books.toscrape.com/catalogue/" + book_url
+    book_dict['URL'] = book_url
+
+    print("scareping book ", book_name)
+    logging.info("scraping: " + book_url)
+
+    content = get_page_content(book_url)
+    content = content.replace("\n", " ")
+
+    upc, price, image_url, availability, description = get_product_details(content)
+    book_dict["UPC"] = upc
+    book_dict["Price"] = price
+    book_dict["ImageURL"] = image_url
+    book_dict["Availability"] = availability
+    book_dict["Description"] = description
+
+    csv_writer.writerows(book_dict)
+
 
 def crawl_category(category_name, category_url):
     """crawls a particular category of book"""
@@ -53,12 +114,9 @@ def crawl_category(category_name, category_url):
 
         book_list = get_book_list(content)
         for book in book_list:
-            # scrape_book_info(book)
-            print(book)
-            print()
+            scrape_book_info(book, category_name)
 
         next_page = get_next_page(category_url, content)
-
         if next_page is None:
             break
 
@@ -75,11 +133,11 @@ def crawl_website():
         sys.exit(1)
 
     category_list = get_category_list(content)
-    print(len(category_list))
     for category in category_list:
         category_url, category_name = category
+        print(category_url)
         category_url = "http://" + host_name + "/" + category_url
-        # sys.exit(1)
+        sys.exit(1)
 
         crawl_category(category_name, category_url)
         sys.exit(1)
@@ -92,11 +150,21 @@ if __name__ == "__main__":
 
     book_list_pat = re.compile(r'<h3><a href="(.*?)"\s*title="(.*?)">')
 
+    img_pat = re.compile(r'<div class="item active">\s*<img src="(.*?)".*?>')
+
+    desc_pat =  re.compile(r'<div id="product_description" class="sub-header">.*?<p>(.*?)</p>')
+
+    upc_pat = re.compile(r'<th>UPC</th>\s*<td>(.*?)</td>')
+
+    price_pat = re.compile(r'<th>Price \(incl. tax\)</th>\s*<td>\D+([\d.]+?)</td>')
+
+    avail_pat = re.compile(r'<th>Availability</th>\s*<td>(.*?)</td>')
+
 
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='bookstore_crawler.log',level=logging.DEBUG)
 
     with open("book_list.csv", "w") as csvf:
-        csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "Image_URL", "Price", "Availability","Description"])
+        csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "ImageURL", "Price", "Availability","Description"])
         csv_writer.writeheader()
 
     crawl_website()
