@@ -1,5 +1,5 @@
-# import requests
-# import re
+import requests
+import re
 
 # # main_url = "http://books.toscrape.com/index.html"
 # # # Get the page content
@@ -35,30 +35,35 @@
 
 
 
-# book_url = "http://books.toscrape.com/catalogue/the-exiled_247/index.html"
+book_url = "http://books.toscrape.com/catalogue/1000-places-to-see-before-you-die_1/index.html"
 
-# rsp = requests.get(book_url)
-# page_content = rsp.text
+rsp = requests.get(book_url)
+page_content = rsp.text
 
-# # Finding the book image url
+# Finding the book image url
 # img_pat = re.compile(r'<div class="item active">\s*<img src=".{5}(.*?)".*?>', re.M | re.DOTALL)
 # img_url = img_pat.findall(page_content)
+# print(img_url)
 # img_url = "http://books.toscrape.com" + img_url[0]
+# print(img_url)
 
-# # Taking product discription
+# Taking product discription
 # dsc_pat = re.compile(r'<div id="product_description" class="sub-header">.*?<p>(.*?)</p>', re.M | re.DOTALL)
 # prd_dsc = dsc_pat.findall(page_content)
+# print(prd_dsc[0])
 
-# # Taking product id no
-# pd_pat = re.compile(r'<th>UPC</th><td>(.*?)</td>')
+# Taking product id no
+# pd_pat = re.compile(r'<th>UPC</th>\s*<td>(.*?)</td>')
 # pd_id = pd_pat.findall(page_content)
+# print(pd_id)
 
-# # Taking Poduct price include tax
-# price_pat = re.compile(r'<th>Price \(incl. tax\)</th><td>(.*?)</td>')
+# Taking Poduct price include tax
+# price_pat = re.compile(r'<th>Price \(incl. tax\)</th>\s*<td>\D+([\d.]+?)</td>')
 # price = price_pat.findall(page_content)
+# print(price)
 
 # # available item
 # avl_pat = re.compile(r'<th>Availability</th>\s*<td>(.*?)</td>')
-# in_alsdaval = avl_pat.findall(page_content)
-
+# in_available = avl_pat.findall(page_content)
+# print(in_available)
 
