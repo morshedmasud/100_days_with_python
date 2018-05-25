@@ -3,6 +3,7 @@ import sys
 import csv
 import requests
 import logging
+from html import unescape
 
 def get_category_list(content):
     """get_category_list takes content of home page and return a list of categories and their urls"""
@@ -32,7 +33,7 @@ def get_product_details(content):
         logging.warn("Description not found")
         description = ""
     else:
-        description = result[0]
+        description = unescape(result[0])
 
     result = upc_pat.findall(content)
     if len(result) == 0:
@@ -84,6 +85,7 @@ def scrape_book_info(book_info, category_name):
     """gets the content of a book details page, and parses different components and stores the info"""
 
     book_url, book_name = book_info
+    book_name = unescape(book_name)
     book_dict = {"Name": book_name, "Category": category_name}
     # sys.exit(1)
 
@@ -104,24 +106,17 @@ def scrape_book_info(book_info, category_name):
     book_dict["ImageURL"] = image_url
     book_dict["Availability"] = availability
     book_dict["Description"] = description
-    print(book_dict["Description"])
-    sys.exit(1)
 
-    # csv_writer.writerows(book_dict)
+    csv_writer.writerow(book_dict)
 
 
 def crawl_category(category_name, category_url):
     """crawls a particular category of book"""
     while True:
-        print(category_url)
         content = get_page_content(category_url)
-
         book_list = get_book_list(content)
         for book in book_list:
-            print('m')
             scrape_book_info(book, category_name)
-
-        sys.exit(1)
 
         next_page = get_next_page(category_url, content)
         if next_page is None:
@@ -145,10 +140,8 @@ def crawl_website():
 
         category_url = "http://" + host_name + "/" + category_url
         print(category_url)
-        # sys.exit(1)
-
         crawl_category(category_name, category_url)
-        sys.exit(1)
+
 
 if __name__ == "__main__":
    # Compile different regular expression patterns
@@ -169,11 +162,11 @@ if __name__ == "__main__":
     avail_pat = re.compile(r'<th>Availability</th>\s*<td>(.*?)</td>')
 
 
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='bookstore_crawler.log',level=logging.DEBUG)
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='log_file/bookstore_crawler.log',level=logging.DEBUG)
 
-    with open("book_list.csv", "w") as csvf:
+    with open("csv_file/book_list.csv", "w", encoding="ISO-8859-1") as csvf:
         csv_writer = csv.DictWriter(csvf, fieldnames=["Name", "Category", "UPC", "URL", "ImageURL", "Price", "Availability","Description"])
         csv_writer.writeheader()
 
-    crawl_website()
+        crawl_website()
 
