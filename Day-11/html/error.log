@@ -1,0 +1,10 @@
+05/28/2018 09:59:01 pm 
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+    raise Exception
+Exception
+05/28/2018 09:59:23 pm 
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+    raise Exception
+Exception
