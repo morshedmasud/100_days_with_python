@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 
 # Global Variable
-SPLITE = 'sqlite'
+SQLITE = 'sqlite'
 
 # Table names
 USERS = 'users'
