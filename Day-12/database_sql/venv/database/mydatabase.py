@@ -1,6 +1,8 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+import sys
+
 
 # Global Variable
 SQLITE = 'sqlite'
@@ -10,22 +12,25 @@ USERS = 'users'
 ADDRESSES = 'addresses'
 
 class MyDatabase:
+
     # http://docs.sqlalchemy.org/en/latest/core/engines.html
+    __log = None
     DB_ENGINE = {
-        SQLITE: 'sqlite:...{DB}'
+        SQLITE: 'sqlite:///{DB}'
     }
 
     # Main DB Connection Ref Obj
     db_engine = None
 
-    def __init__(self, dbtype, username='', password='', dbname=''):
+    def __init__(self, dbtype, username='', password='', dbname='', log=''):
         dbtype = dbtype.lower()
+        self.__log = log
 
         if dbtype in self.DB_ENGINE.keys():
             engine_url = self.DB_ENGINE[dbtype].format(DB=dbname)
+            print(engine_url)
 
             self.db_engine = create_engine(engine_url)
-            print(self.db_engine)
         else:
             print("DBType is not found in  DB_ENGINE")
 
@@ -48,6 +53,7 @@ class MyDatabase:
             metadata.create_all(self.db_engine)
             print("Tables created")
         except Exception as e:
+            print("Error occurred during Table creation!")
             print(e)
 
     # Insert, Update, Delete
@@ -73,6 +79,6 @@ class MyDatabase:
                 print(e)
             else:
                 for row in result:
-                    print(row) # print(row[0], row[1], row[2])
+                    print(row)# print(row[0], row[1], row[2])
                 result.close()
         print("\n")
