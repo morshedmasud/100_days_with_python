@@ -7,8 +7,8 @@ INSERT INTO users(first_name, last_name) VALUES ("Giash", "Uddin");
 INSERT INTO users(first_name, last_name) VALUES ("Tamim", "Iqbal");
 INSERT INTO users(first_name, last_name) VALUES ("Ariful", "Hasan");
 
-INSERT INTO addresses(user_id, email, address) VALUES (11, "masud@gmail.gamil.com", "BD");
-INSERT INTO addresses(user_id, email, address) VALUES (21, "nasir@gmail.gamil.com", "Id");
-INSERT INTO addresses(user_id, email, address) VALUES (31, "giash@gmail.gamil.com", "US");
-INSERT INTO addresses(user_id, email, address) VALUES (41, "tamim@gmail.gamil.com", "Pak");
-INSERT INTO addresses(user_id, email, address) VALUES (51, "arif@gmail.gamil.com", "Rs");
+INSERT INTO addresses(user_id, email, address) VALUES (101, "masud@gmail.gamil.com", "Bangladesh");
+INSERT INTO addresses(user_id, email, address) VALUES (102, "nasir@gmail.gamil.com", "India");
+INSERT INTO addresses(user_id, email, address) VALUES (103, "giash@gmail.gamil.com", "United State");
+INSERT INTO addresses(user_id, email, address) VALUES (104, "tamim@gmail.gamil.com", "Pakistan");
+INSERT INTO addresses(user_id, email, address) VALUES (105, "arif@gmail.gamil.com", "Russia");

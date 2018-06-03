@@ -83,6 +83,27 @@ class MyDatabase:
                 self.__log.report(str(e))
             else:
                 for row in result:
-                    print(row)# print(row[0], row[1], row[2])
+                    print(row)  # print(row[0], row[1], row[2])
                 result.close()
         print("\n")
+
+    def sample_query(self):
+        # sample query
+        query = "SELECT first_name, last_name FROM {TBL_USR} WHERE " \
+            "last_name LIKE 'M%';".format(TBL_USR=USERS)
+        self.print_all_data(query=query)
+
+        # sample query joining
+
+        query = "SELECT u.last_name as last_name, " \
+            "a.email as email, a.address as address " \
+            "FROM {TBL_USR} AS u " \
+            "LEFT JOIN {TBL_ADDR} as a " \
+            "WHERE u.id=a.user_id AND u.last_name LIKE 'M%';" \
+        .format(TBL_USR=USERS, TBL_ADDR=ADDRESSES)
+        self.print_all_data(query=query)
+
+    def sample_delete(self):
+        # Delete Data by ID
+
+
