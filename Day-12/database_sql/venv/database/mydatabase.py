@@ -25,13 +25,15 @@ class MyDatabase:
     def __init__(self, dbtype, username='', password='', dbname='', log=''):
         dbtype = dbtype.lower()
         self.__log = log
+        print("db type: ", dbtype)
 
         if dbtype in self.DB_ENGINE.keys():
             engine_url = self.DB_ENGINE[dbtype].format(DB=dbname)
-            print(engine_url)
+            print("engin_url: ", engine_url)
 
             self.db_engine = create_engine(engine_url)
         else:
+            logging.INFO("DBtype is not found in DB_ENGINE")
             print("DBType is not found in  DB_ENGINE")
 
     def create_db_tables(self):
@@ -44,7 +46,7 @@ class MyDatabase:
 
         address = Table(ADDRESSES, metadata,
                       Column('id', Integer, primary_key=True),
-                      Column('user_id', None, ForeignKey("users.id")),
+                      Column('user_id', Integer, nullable=False),
                       Column('email', String, nullable=False),
                       Column('address', String)
                       )
@@ -54,18 +56,19 @@ class MyDatabase:
             print("Tables created")
         except Exception as e:
             print("Error occurred during Table creation!")
-            print(e)
+            self.__log.report(str(e))
 
     # Insert, Update, Delete
     def execute_query(self, query=''):
         if query == '':
             return
 
-        print(query)
+        print("query_obj: ", query)
         with self.db_engine.connect() as connection:
             try:
                 connection.execute(query)
             except Exception as e:
+                self.__log.report(str(e))
                 print(e)
 
     def print_all_data(self, table='', query=''):
@@ -77,6 +80,7 @@ class MyDatabase:
                 result = connection.execute(query)
             except Exception as e:
                 print(e)
+                self.__log.report(str(e))
             else:
                 for row in result:
                     print(row)# print(row[0], row[1], row[2])
