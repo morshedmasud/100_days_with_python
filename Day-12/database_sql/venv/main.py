@@ -3,10 +3,12 @@ from database import log
 
 def main():
     dbms = mydatabase.MyDatabase(mydatabase.SQLITE, dbname='mydb.sqlite', log=log)
-    dbms.create_db_tables()
+    # dbms.create_db_tables()
 
-    dbms.print_all_data(mydatabase.USERS)
-    dbms.print_all_data(mydatabase.ADDRESSES)
+    # dbms.print_all_data(mydatabase.USERS)
+    # dbms.print_all_data(mydatabase.ADDRESSES)
+
+    dbms.sample_query()
 
 
 if __name__ == "__main__":
