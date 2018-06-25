@@ -14,9 +14,8 @@ class MessCost:
         name = input("Type your name: ")
         cost = input("Enter today cost: ")
         data = [str(date), name, cost]
-        with open("csv_file/date.csv", "a") as csvf:
-            csv_writer = csv.writer(csvf, delimiter=',', quotechar="\"", quoting=csv.QUOTE_MINIMAL)
-            csv_writer.writerow(data)
+        with open("csv_file/data.csv", "a") as f:
+            f.writerow(data)
 
     def show_running_cost(self):
         pass
