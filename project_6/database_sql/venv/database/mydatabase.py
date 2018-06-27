@@ -33,7 +33,7 @@ class MyDatabase:
 
             self.db_engine = create_engine(engine_url)
         else:
-            logging.INFO("DBtype is not found in DB_ENGINE")
+            # logging.INFO("DBtype is not found in DB_ENGINE")
             print("DBType is not found in  DB_ENGINE")
 
     def create_db_tables(self):
