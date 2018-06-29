@@ -8,3 +8,7 @@ def set_custom_log_info():
 def report(e: Exception):
     logging.exception(str(e))
 
+
+def error(comment):
+    logging.error(comment)
+

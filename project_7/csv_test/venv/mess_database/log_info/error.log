@@ -1,0 +1,15 @@
+06/29/2018 08:58:48 pm [Errno 2] No such file or directory: 'sv_file/data.csv'
+Traceback (most recent call last):
+  File "/home/anto/Project/masud_projects/100_days_with_python/project_7/csv_test/venv/mess_database/main.py", line 22, in add_cost
+    with open("sv_file/data.csv", "a") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'sv_file/data.csv'
+06/29/2018 09:00:42 pm [Errno 2] No such file or directory: 'sv_file/data.csv'
+Traceback (most recent call last):
+  File "/home/anto/Project/masud_projects/100_days_with_python/project_7/csv_test/venv/mess_database/main.py", line 22, in add_cost
+    with open("sv_file/data.csv", "a") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'sv_file/data.csv'
+06/29/2018 09:01:26 pm [Errno 2] No such file or directory: 'sv_file/data.csv'
+Traceback (most recent call last):
+  File "/home/anto/Project/masud_projects/100_days_with_python/project_7/csv_test/venv/mess_database/main.py", line 22, in add_cost
+    with open("sv_file/data.csv", "a") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'sv_file/data.csv'
