@@ -1,12 +1,26 @@
-import log
+from sqlalchemy import create_engine
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from datetime import datetime
-import csv
+import logging
 import sys
+
+# Global Variable
+SQLITE = 'sqlite'
+
+# Table names
+COST = "cost_list"
+
 
 
 class MessCost:
-    # def __init__(self, option):
-    #     self.option = option
+
+    DB_ENGINE = {
+        SQLITE: 'sqlite:///{DB}'
+    }
+
+    db_engine = None
+
+    def __init__(self, dbtype, date='', cost='', comment=''):
 
     def add_cost(self):
         print("__________Added Options__________\n")
@@ -17,7 +31,7 @@ class MessCost:
         purpose = input("Type comments: ")
         if not name or not cost:
             print("You should fulfill both name and cost")
-            log.error("You should fulfill name and cost field")
+            logging.WARNING("You should fulfill name and cost field")
 
             sys.exit(0)
         data = [str(date), name, cost, purpose]
@@ -28,7 +42,7 @@ class MessCost:
             print("Added successfully.....\n")
         except Exception as e:
             print("something wrong!!\n")
-            log.report(str(e))
+            logging.ERROR(e)
 
         print("try again....any option")
         option = int(input("Enter your option: "))
@@ -65,6 +79,13 @@ class MessCost:
         sys.exit(0)
 
     def call_function(self, option):
+        print("""
+        1: Add Cost.
+        2: Show Database.
+        3: Total Cost for Each Person.
+        4: Close Program.
+        """)
+
         if option == 1:
             cls.add_cost()
         elif option == 2:
@@ -81,35 +102,13 @@ class MessCost:
 
 
 if __name__ == "__main__":
-    print("""
-1: Add Cost.
-2: Show Database.
-3: Total Cost for Each Person.
-4: Close Program.
-""")
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='log_info/error.log', level=logging.DEBUG)
 
-    # field_name = ['Date', 'Name', 'Cost', 'Purpose']
-    # with open("csv_file/data.csv", "w") as f:
-    #     csv_writer = csv.writer(f, delimiter=',', quotechar="\"", quoting=csv.QUOTE_MINIMAL)
-    #     csv_writer.writerow(field_name)
+    dbms = MessCost()
+
     option = int(input("Enter your option: "))
     cls = MessCost()
     cls.call_function(option)
-
-    # option = int(input("Enter your option: "))
-    # if option == 1:
-    #     cls.add_cost()
-    # elif option == 2:
-    #     cls.show_database()
-    # elif option == 3:
-    #     cls.total_cost_for_each()
-    # elif option == 4:
-    #     cls.exit()
-    # else:
-    #     print("You choice wrong option!!!")
-    #     print("try again....")
-    #     option = int(input("Enter your option: "))
-
 
 
 
