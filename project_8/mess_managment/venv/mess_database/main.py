@@ -1,26 +1,12 @@
-from sqlalchemy import create_engine
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+import sqlite3
 from datetime import datetime
 import logging
 import sys
 
-# Global Variable
-SQLITE = 'sqlite'
-
-# Table names
-COST = "cost_list"
-
-
 
 class MessCost:
-
-    DB_ENGINE = {
-        SQLITE: 'sqlite:///{DB}'
-    }
-
-    db_engine = None
-
-    def __init__(self, dbtype, date='', cost='', comment=''):
+    # Global variable
+    dbms = None
 
     def add_cost(self):
         print("__________Added Options__________\n")
@@ -34,11 +20,8 @@ class MessCost:
             logging.WARNING("You should fulfill name and cost field")
 
             sys.exit(0)
-        data = [str(date), name, cost, purpose]
         try:
-            with open("csv_file/data.csv", "a") as f:
-                f = csv.writer(f)
-                f.writerow(data)
+
             print("Added successfully.....\n")
         except Exception as e:
             print("something wrong!!\n")
@@ -78,6 +61,18 @@ class MessCost:
         print("Thanks for using this application.")
         sys.exit(0)
 
+
+    def create_database(self):
+        try:
+            conn = sqlite3.connect("database/CostSheet.db")
+            dbms = conn.cursor()
+            dbms.execute('''CREATE TABLE CostSheet
+                        (Date text, Name text, Cost real, Purpose)''')
+            dbms.close()
+            print("Database created")
+        except Exception as e:
+            logging.CRITICAL(e)
+
     def call_function(self, option):
         print("""
         1: Add Cost.
@@ -104,14 +99,8 @@ class MessCost:
 if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='log_info/error.log', level=logging.DEBUG)
 
-    dbms = MessCost()
-
-    option = int(input("Enter your option: "))
     cls = MessCost()
-    cls.call_function(option)
-
-
-
+    # cls.create_database()
 
 
 
