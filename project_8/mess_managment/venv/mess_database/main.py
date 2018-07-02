@@ -3,10 +3,9 @@ from datetime import datetime
 import logging
 import sys
 
-
+# Global variable
 class MessCost:
-    # Global variable
-    dbms = None
+
 
     def add_cost(self):
         print("__________Added Options__________\n")
@@ -25,7 +24,7 @@ class MessCost:
             print("Added successfully.....\n")
         except Exception as e:
             print("something wrong!!\n")
-            logging.ERROR(e)
+            logging.ERROR(str(e))
 
         print("try again....any option")
         option = int(input("Enter your option: "))
@@ -67,11 +66,11 @@ class MessCost:
             conn = sqlite3.connect("database/CostSheet.db")
             dbms = conn.cursor()
             dbms.execute('''CREATE TABLE CostSheet
-                        (Date text, Name text, Cost real, Purpose)''')
+                        (Date text, Name text, Cost real, Purpose text)''')
             dbms.close()
             print("Database created")
         except Exception as e:
-            logging.CRITICAL(e)
+            logging.exception(e)
 
     def call_function(self, option):
         print("""
@@ -98,9 +97,8 @@ class MessCost:
 
 if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='log_info/error.log', level=logging.DEBUG)
-
     cls = MessCost()
     # cls.create_database()
-
+    print(dbms)
 
 
