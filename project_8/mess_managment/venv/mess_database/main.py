@@ -3,76 +3,92 @@ from datetime import datetime
 import logging
 import sys
 
-# Global variable
-class MessCost:
 
+class MessCost:
 
     def add_cost(self):
         print("__________Added Options__________\n")
         date = datetime.today()
-        date = date.date()
-        name = input("Type your name: ")
+        date = str(date.today().strftime("%m/%d/%Y %I:%M:%S %P"))
+        name = input("Type your name: ").capitalize()
         cost = input("Enter today cost: ")
-        purpose = input("Type comments: ")
+        purpose = input("Type comments: ").capitalize()
         if not name or not cost:
-            print("You should fulfill both name and cost")
-            logging.WARNING("You should fulfill name and cost field")
+            print("\nYou should fulfill both name and cost field.")
+            logging.warning("You should fulfill name and cost field")
+            print("\ntry again...\n")
+            self.call_function()
 
-            sys.exit(0)
         try:
-
-            print("Added successfully.....\n")
+            data = "INSERT INTO CostSheet VALUES ('{0}', '{1}', {2}, '{3}')".format(str(date), name, cost, purpose)
+            self.execute_query(data)
+            logging.info(data)
+            print("\nAdded successfully.....\n")
         except Exception as e:
-            print("something wrong!!\n")
-            logging.ERROR(str(e))
+            print("\nsomething wrong!!\n")
+            logging.error(str(e))
 
         print("try again....any option")
-        option = int(input("Enter your option: "))
-        cls.call_function(option)
+        self.call_function()
 
     def show_database(self):
         print("___________Showing Database___________\n")
-        with open("csv_file/data.csv", 'r') as f:
-            r = csv.reader(f)
-            for i, row in enumerate(r):
-                print(row)
-            print()
-            print("try again....any option")
-            option = int(input("Enter your option: "))
-            cls.call_function(option)
+        data = "SELECT * FROM CostSheet"
+        conn = sqlite3.connect("database/CostSheet.db")
+        dbms = conn.cursor()
+        result = dbms.execute(data)
+        for i in result:
+            print(*i, sep='   ')
+        conn.commit()
+        result.close()
+        print("\ntry again....\n")
+        self.call_function()
 
     def total_cost_for_each(self):
         print("___________Calculate Cost___________\n")
         total_cost = 0
         person = int(input("How many people living together: "))
-        with open("csv_file/data.csv", 'r') as f:
-            csv_reader = csv.reader(f)
-            for i, row in enumerate(csv_reader):
-                if i > 0:
-                    total_cost += int(row[2])
+
+        data = "SELECT Cost FROM CostSheet"
+        conn = sqlite3.connect("database/CostSheet.db")
+        dbms = conn.cursor()
+        result = dbms.execute(data)
+        for i in result:
+            total_cost += int(i[0])
+        conn.commit()
+        result.close()
         print("Total cost: ", total_cost)
-        print("Total cost for each person: %d Taka\n" % (total_cost/person))
-        print("try again....any option")
-        option = int(input("Enter your option: "))
-        cls.call_function(option)
+        print("Total cost for each person: %0.2f Taka.\n" % (total_cost/person))
+        logging.info("Showing cost for each person.")
+        print("\ntry again....\n")
+        self.call_function()
 
     def exit(self):
         print("Thanks for using this application.")
         sys.exit(0)
 
+    def execute_query(self, data):
+        conn = sqlite3.connect("database/CostSheet.db")
+
+        dbms = conn.cursor()
+        dbms.execute(data)
+
+        conn.commit()
+        conn.close()
 
     def create_database(self):
         try:
             conn = sqlite3.connect("database/CostSheet.db")
             dbms = conn.cursor()
-            dbms.execute('''CREATE TABLE CostSheet
-                        (Date text, Name text, Cost real, Purpose text)''')
-            dbms.close()
+            dbms.execute('''CREATE TABLE CostSheet(Date text, Name text, Cost real, Purpose text)''')
+            conn.commit()
+            conn.close()
             print("Database created")
         except Exception as e:
             logging.exception(e)
 
-    def call_function(self, option):
+    def call_function(self):
+        print("........Welcome to Mess Management system..........")
         print("""
         1: Add Cost.
         2: Show Database.
@@ -80,25 +96,30 @@ class MessCost:
         4: Close Program.
         """)
 
+        option = int(input("Enter your options: "))
         if option == 1:
-            cls.add_cost()
+            self.add_cost()
         elif option == 2:
-            cls.show_database()
+            self.show_database()
         elif option == 3:
-            cls.total_cost_for_each()
+            self.total_cost_for_each()
         elif option == 4:
-            cls.exit()
+            self.exit()
         else:
-            print("You choice wrong option!!!\n")
+            print("\nYou choice wrong option!!!\n")
             print("try again....")
-            option = int(input("Enter your option: "))
-            cls.call_function(option)
+            self.call_function()
 
 
 if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %P', filename='log_info/error.log', level=logging.DEBUG)
+
     cls = MessCost()
     # cls.create_database()
-    print(dbms)
+    cls.call_function()
+
+
+
+
 
 
